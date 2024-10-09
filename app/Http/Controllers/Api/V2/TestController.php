@@ -9,6 +9,6 @@ class TestController extends Controller
 {
     public function xmlToJson(Request $request)
     {
-        return $request->json();
+        return response($request->all());
     }
 }
