@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function xmlToJson()
+    public function xmlToJson(Request $request)
     {
-        return [];
+        return $request->json();
     }
 }
