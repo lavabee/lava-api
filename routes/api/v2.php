@@ -9,8 +9,4 @@ Route::middleware("auth:sanctum")->prefix('v2')->group(function (){
 
 
 
-    Route::get('/xml2json',[\App\Http\Controllers\Api\V2\TestController::class,'xmlToJson']);
-
-
-
 });
