@@ -4,7 +4,7 @@ use App\Http\Controllers\Api\V2\CompleteTaskController;
 
 Route::middleware("auth:sanctum")->prefix('test')->group(function (){
 
-    Route::get('/xml2json',[\App\Http\Controllers\Api\V2\TestController::class,'xmlToJson']);
+    Route::post('/xml2json',[\App\Http\Controllers\Api\V2\TestController::class,'xmlToJson']);
 
 
 
