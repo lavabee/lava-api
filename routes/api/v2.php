@@ -6,4 +6,8 @@ Route::middleware("auth:sanctum")->prefix('v2')->group(function (){
     Route::apiResource("tasks", TaskController::class);
     Route::patch("tasks/{task}/complete", CompleteTaskController::class);
 
+    Route::get('/xml2json',[\App\Http\Controllers\Api\V2\TestController::class,'xmlToJson']);
+
+
+
 });
