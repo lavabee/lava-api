@@ -8,6 +8,6 @@ Route::middleware("auth:sanctum")->prefix('test')->group(function (){
 
     Route::post('json2xml',[TestController::class,'jsonToXml']);
 
-    Route::post('json2xml',[TestController::class,'mapGateway']);
+    Route::post('map',[TestController::class,'mapGateway']);
 
 });
