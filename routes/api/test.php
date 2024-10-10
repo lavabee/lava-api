@@ -6,4 +6,6 @@ Route::middleware("auth:sanctum")->prefix('test')->group(function (){
 
     Route::post('xml2json',[TestController::class,'xmlToJson']);
 
+    Route::post('json2xml',[TestController::class,'jsonToXml']);
+
 });

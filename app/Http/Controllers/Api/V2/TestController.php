@@ -11,4 +11,10 @@ class TestController extends Controller
     {
         return response($request->all());
     }
+
+    public function jsonToXml(Request $request)
+    {
+        return response($request->all());
+    }
+
 }
