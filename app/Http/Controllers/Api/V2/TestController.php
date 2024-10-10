@@ -19,7 +19,7 @@ class TestController extends Controller
 
     public function mapGateway(Request $request)
     {
-        return response($request->all());
+        //return response($request->all());
     }
 
 }
