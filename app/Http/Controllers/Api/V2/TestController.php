@@ -12,12 +12,18 @@ class TestController extends Controller
     {
         if ($request->isMethod('post')) {
             // Log headers
+            Log::info('----------------------------------------------------------------- ');
+            Log::info('------------------------------ START POST------------------------ ');
+            Log::info('----------------------------------------------------------------- ');
             $headers = $request->headers->all();
             Log::info('Request Headers: ', $headers);
 
             // Log body
             $body = $request->all();
             Log::info('Request Body: ', $body);
+            Log::info('----------------------------------------------------------------- ');
+            Log::info('------------------------------ END POSTS------------------------ ');
+            Log::info('----------------------------------------------------------------- ');
         }
         return response($request->all());
     }
