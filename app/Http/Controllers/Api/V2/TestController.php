@@ -25,6 +25,7 @@ class TestController extends Controller
             Log::info('------------------------------ END POSTS------------------------ ');
             Log::info('----------------------------------------------------------------- ');
         }
+        $request->merge(['new_variable' => 'value']);
         return response($request->all());
     }
 
