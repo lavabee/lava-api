@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
+    public function index(Request $request)
+    {
+        return response($request->all());
+    }
+
     public function xmlToJson(Request $request)
     {
         return response($request->all());
@@ -21,5 +26,10 @@ class TestController extends Controller
     {
         return response($request->all());
     }
+
+
+
+
+
 
 }
