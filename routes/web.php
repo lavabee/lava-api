@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\File;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +21,13 @@ Route::get('/logs', function () {
     $path = storage_path('logs/laravel.log'); // Đường dẫn đến file log
     if (File::exists($path)) {
         $logs = File::get($path);
-        return nl2br($logs); // Chuyển đổi ký tự xuống dòng thành thẻ <br> để hiển thị đúng trên trình duyệt
+        // Tách các dòng log
+        $logLines = explode("\n", $logs);
+        // Giới hạn số dòng log (ví dụ: chỉ hiển thị 100 dòng cuối)
+        $logLines = array_slice($logLines, -100);
+        // Hiển thị log dưới dạng HTML với các dòng mới
+        return nl2br(implode("\n", $logLines));
     } else {
         return 'Log file does not exist.';
     }
 });
-
-
